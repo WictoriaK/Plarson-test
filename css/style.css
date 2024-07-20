@@ -1,0 +1,113 @@
+/* Сетка реализована в двух вариантах grid и flex.
+Для каждой сетки необходимо расскоментировать нужный код в файле html и в style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* grid */
+
+.chat {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'aside main main'
+    'footer footer footer';
+  height: 100dvh;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+@media(min-width: 550px) {
+  .chat {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+.chat__main {
+  overflow-y: scroll;
+  background-color: rgb(230, 230, 10);
+}
+
+
+.chat__header {
+  grid-area: header;
+  min-height: 50px;
+  background-color: red;
+  text-align: center;
+}
+
+
+.chat__user {
+  grid-area: aside;
+  background-color: green;
+  overflow-y: scroll;
+}
+
+.chat__footer {
+  grid-area: footer;
+  min-height: 100px;
+  background-color: blue;
+  text-align: center;
+}
+
+
+
+/* Начало стилей для flex расскладки */
+/* flex */
+
+/* html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: #fff;
+}
+
+
+
+.chat__header {
+  padding: 10px;
+  text-align: center;
+  min-height: 50px;
+  background-color: red;
+}
+
+.chat__main {
+  display: flex;
+  height: calc((100dvh - 100px));
+  flex-grow: 1;
+}
+
+.chat__user {
+  width: 200px;
+  padding: 5px;
+  overflow: scroll;
+  height: 100%;
+  background-color: green;
+}
+
+.chat__window {
+  width: 100%;
+  color: #000;
+  background-color: rgb(204, 204, 10);
+}
+
+.chat__text {
+  overflow: scroll;
+  height: 100%;
+}
+
+.chat__footer {
+  min-height: 100px;
+  padding: 10px;
+  text-align: center;
+  background-color: blue;
+} */
